@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E670E7DC-1286-4B76-A8C3-8736B8D8AF72}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TLD.View</RootNamespace>
+    <AssemblyName>TLD.View</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV">
+      <HintPath>C:\Emgu\emgucv-windows-universal-cuda 2.4.10.1940\bin\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>C:\Emgu\emgucv-windows-universal-cuda 2.4.10.1940\bin\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util">
+      <HintPath>C:\Emgu\emgucv-windows-universal-cuda 2.4.10.1940\bin\Emgu.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\frmEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frmEvaluation.Designer.cs">
+      <DependentUpon>frmEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\GroundTruthMode.cs" />
+    <Compile Include="App\GroundTruthPersistor.cs" />
+    <Compile Include="Detection\CenterDetector.cs" />
+    <Compile Include="Detection\CircleDetector.cs" />
+    <Compile Include="Detection\frmEnsembleClassifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmEnsembleClassifier.Designer.cs">
+      <DependentUpon>frmEnsembleClassifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detection\frmNnClassifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmNnClassifier.Designer.cs">
+      <DependentUpon>frmNnClassifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detection\frmPixelComparisons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmPixelComparisons.Designer.cs">
+      <DependentUpon>frmPixelComparisons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frmFrameToFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frmFrameToFrame.Designer.cs">
+      <DependentUpon>frmFrameToFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Learning\frmLearning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Learning\frmLearning.Designer.cs">
+      <DependentUpon>frmLearning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Learning\frmObjectModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Learning\frmObjectModel.Designer.cs">
+      <DependentUpon>frmObjectModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Camera.cs" />
+    <Compile Include="App\DrawingService.cs" />
+    <Compile Include="Dummies\DetectorDummy.cs" />
+    <Compile Include="Dummies\LearnerDummy.cs" />
+    <Compile Include="Detection\frmCenterDetector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmCenterDetector.Designer.cs">
+      <DependentUpon>frmCenterDetector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detection\frmCircleDetector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmCircleDetector.Designer.cs">
+      <DependentUpon>frmCircleDetector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detection\frmCreateDetector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmCreateDetector.Designer.cs">
+      <DependentUpon>frmCreateDetector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Integration\AverageOutputStrategy.cs" />
+    <Compile Include="Detection\frmScanningWindowGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmScanningWindowGenerator.Designer.cs">
+      <DependentUpon>frmScanningWindowGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detection\frmCascadedClassifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmCascadedClassifier.Designer.cs">
+      <DependentUpon>frmCascadedClassifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detection\frmDetector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmDetector.Designer.cs">
+      <DependentUpon>frmDetector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detection\frmVarianceClassifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detection\frmVarianceClassifier.Designer.cs">
+      <DependentUpon>frmVarianceClassifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detection\IFrmSpecificDetector.cs" />
+    <Compile Include="Learning\IFrmSpecificLearner.cs" />
+    <Compile Include="App\frmNccCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\frmNccCalculator.Designer.cs">
+      <DependentUpon>frmNccCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Program.cs" />
+    <Compile Include="App\TldSessionPersistor.cs" />
+    <Compile Include="App\VideoFile.cs" />
+    <Compile Include="App\VideoMode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Integration\TldDrawingInfo.cs" />
+    <Compile Include="App\Utils.cs" />
+    <Compile Include="Detection\DetectorDrawingInfo.cs" />
+    <EmbeddedResource Include="App\frmEvaluation.resx">
+      <DependentUpon>frmEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmCenterDetector.resx">
+      <DependentUpon>frmCenterDetector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmCircleDetector.resx">
+      <DependentUpon>frmCircleDetector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmCreateDetector.resx">
+      <DependentUpon>frmCreateDetector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmEnsembleClassifier.resx">
+      <DependentUpon>frmEnsembleClassifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmNnClassifier.resx">
+      <DependentUpon>frmNnClassifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmPixelComparisons.resx">
+      <DependentUpon>frmPixelComparisons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frmFrameToFrame.resx">
+      <DependentUpon>frmFrameToFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Learning\frmLearning.resx">
+      <DependentUpon>frmLearning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Learning\frmObjectModel.resx">
+      <DependentUpon>frmObjectModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmScanningWindowGenerator.resx">
+      <DependentUpon>frmScanningWindowGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmCascadedClassifier.resx">
+      <DependentUpon>frmCascadedClassifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmDetector.resx">
+      <DependentUpon>frmDetector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detection\frmVarianceClassifier.resx">
+      <DependentUpon>frmVarianceClassifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\frmNccCalculator.resx">
+      <DependentUpon>frmNccCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cudart64_65.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cufft64_65.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cvextern.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="nppc64_65.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="nppi64_65.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="npps64_65.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenCL.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_calib3d2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_contrib2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_core2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_features2d2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_flann2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_gpu2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_highgui2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_imgproc2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_legacy2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_ml2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_nonfree2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_objdetect2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_photo2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_stitching2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_superres2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_video2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_videostab2410.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TLD.Model\TLD.Model.csproj">
+      <Project>{66ed8d13-cace-4821-8201-a15e79866318}</Project>
+      <Name>TLD.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TLD.Persistency\TLD.Persistency.csproj">
+      <Project>{58ec3fb6-ca46-4eb1-b0c4-9eae03f39367}</Project>
+      <Name>TLD.Persistency</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
